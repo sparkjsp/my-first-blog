@@ -7,6 +7,7 @@
             <h1><a href="">Pet Dogs Blog</a></h1>
         </div>
         
+        <!--
         <div>
             
             <h2><a href="">Pug</a></h2>
@@ -15,6 +16,7 @@
             como mascota. En una encuesta realizada por la FCI, entre el año 2012-2013, fue 
             nombrado dentro de las treinta razas más populares del mundo.</p>
             <p>published:11.06.2017, 10:19</p>
+            
         </div>
        
         <div>
@@ -25,6 +27,7 @@
             de perros durante el siglo XVII, aunque en 1835 esta práctica fue prohibida en Reino 
             Unido. En la actualidad este perro es uno de los símbolos de Inglaterra</p>
             <p>published:12.06.2017, 14:50</p>
+            
         </div>    
          
         <div>
@@ -35,7 +38,17 @@
             y luego en Francia cuando se desplazaron por la Revolución industrial. No obstante, 
             EEUU y Francia han desempeñado importantes papeles en el desarrollo de esta raza.</p>
             <p>published:12.06.2017, 15:35</p>
+            
         </div>
+        -->
+        
+        {% for post in posts %}
+            <div>
+                <h1><a href="">{{post.title}}</a></h1>
+                <p>{{post.text|linebreaksbr}}</p>
+                <p>published:{{post.published_date}}</p>
+            </div>
+        {% endfor %}
         
     </body>
 </html>
