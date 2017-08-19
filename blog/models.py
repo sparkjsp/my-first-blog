@@ -6,6 +6,9 @@ class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
+    #This photo part will be change!!!
+    photo = models.URLField(blank=True)
+    keyword = models.CharField(max_length=30,default='BLOG')
     created_date = models.DateTimeField(
             default = timezone.now)
     published_date = models.DateTimeField(
