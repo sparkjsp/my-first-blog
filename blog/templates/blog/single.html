@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block keyword %}
-    <a href="#">Blog</a>
+    <a href="{% url 'index' %}">Blog</a>
     <span class="separator">&#x2F;</span>
     <a href="#">{{post.keyword}}</a>
 {% endblock %}
@@ -22,7 +22,7 @@
                             <div class="meta">
                                 <i class="fa fa-user"></i> John Doe <i class="fa fa-calendar"></i>{{post.published_date}}<i class="fa fa-comments"></i><span class="data"><a href="#comments">3 Comments</a></span>
                             </div>
-                            {{post.text}}
+                            {{post.text|linebreaksbr}}
                         </div>
                     </article>
 
@@ -42,7 +42,7 @@
                                 <div class="meta">
                                     <h3><a href="#">John Doe</a></h3>
                                     <span class="date">
-                                        24 August 2015
+                                        24 August 2017
                                     </span>
                                     <span class="separator">
                                         -
@@ -62,7 +62,7 @@
                                 <div class="meta">
                                     <h3><a href="#">John Doe</a></h3>
                                     <span class="date">
-                                        24 August 2015
+                                        24 August 2017
                                     </span>
                                     <span class="separator">
                                         -
@@ -82,7 +82,7 @@
                                 <div class="meta">
                                     <h3><a href="#">John Doe</a></h3>
                                     <span class="date">
-                                        24 August 2015
+                                        24 August 2017
                                     </span>
                                     <span class="separator">
                                         -
@@ -102,7 +102,7 @@
                                 <div class="meta">
                                     <h3><a href="#">John Doe</a></h3>
                                     <span class="date">
-                                        24 August 2015
+                                        24 August 2017
                                     </span>
                                     <span class="separator">
                                         -
@@ -142,4 +142,5 @@
                         </form>
                     </aside>
                     
-{% endblock %}              
+{% endblock %}     
+

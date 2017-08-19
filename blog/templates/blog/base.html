@@ -29,8 +29,8 @@
     <header>
         <div class="widewrapper masthead">
             <div class="container">
-                <a href="index.html" id="logo">
-                    <img src="{% static 'img/spark_06.png' %}" alt="clean Blog">
+                <a href="{% url 'index' %}" id="logo">
+                    <img src="{% static 'img/spark_06.png' %}" alt="clean Blog"/>
                 </a>
 
                 <div id="mobile-nav-toggle" class="pull-right">
@@ -100,7 +100,9 @@
                    {% endblock %}
                     
                 </div>
-                
+               
+            {% block aboutme %}
+            
                 <aside class="col-md-4 blog-aside">
                     
                     <div class="aside-widget">
@@ -108,14 +110,20 @@
                             <h3>Featured Post</h3>
                         </header>
                         <div class="body">
+                        
                             <ul class="clean-list">
-                            {% for post in posts %}
-                                <li><a href="">{{post.title}}</a></li>
-                            {% endfor %}
+                            <!-- this part will be changed!!-->
+                                <li><a href="https://www.bluecross.org.uk/rehome/dog">Adopt a dog | Blue Cross</a></li>
+                                <li><a href="http://www.dogbreedslist.info/all-dog-breeds/#.WZhUmnWg_CI">All Dog Breeds</a></li>
+                                <li><a href="https://www.dogstrust.org.uk/rehoming/dogs/filters/lou~~~~~n~">Dog Rehoming</a></li>
+                                <li><a href="http://www.akc.org/content/dog-care/articles/top-100-boy-dog-names/">Top 100 Boy Dog Names</a></li>
+                                <li><a href="https://www.cesarsway.com/dog-training/socialization/how-to-help-dogs-get-along">How to help dogs get along</a></li>
+                                <li><a href="http://time.com/4775436/how-smart-is-a-dog-really/">A Dog's Brain: Inside the Complex Canine Mind</a></li>
                             </ul>
+                            
                         </div>
                     </div>
-                
+                    
                     <div class="aside-widget">
                         <header>
                             <h3>Related Post</h3>
@@ -127,7 +135,7 @@
                                 <li><a href="">How to feed pet as a office worker</a></li>
                                 <li><a href="">Health of pet dogs</a></li>
                                 <li><a href="">What should I do when pets lost</a></li>
-                                <li><a href=""></a>Food type of Pet dogs</li>
+                                <li><a href="">Food type of Pet dogs</a></li>
                                 <li><a href="">Can dogs really show empathy towards humans</a></li>
                             </ul>
                         </div>
@@ -150,8 +158,11 @@
                                 <li><a href="#">LOVELY</a></li>                            
                             </ul>
                         </div>
-                    </div>
+                    </div>                                       
                 </aside>
+               
+            {% endblock %}
+            
             </div>
         </div>
     </div>
@@ -164,29 +175,29 @@
                     <!--This part will be changed !!! -->
                         <h3> <i class="fa fa-user"></i>About</h3>
 
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi laboriosam nostrum consequatur fugiat at, labore praesentium modi, quasi dolorum debitis reiciendis facilis, dolor saepe sint nemo, earum molestias quas.</p>
-                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, error aspernatur assumenda quae eveniet.</p>
+                       <p>I am a person cherish pets and consider them to be members of my own families. I feel that I not only love my pets, but my pets love me in return, we all have much to learn from the way we love our pets.</p>
                     </div>
 
                     <div class="col-md-4 footer-widget">
                     <!--This part will be changed !!! -->
                         <h3> <i class="fa fa-pencil"></i> Recent Post</h3>
+                        
                         <ul class="clean-list">
-                            <li><a href="">Clean - Responsive HTML5 Template</a></li>
-                            <li><a href="">Responsive Pricing Table</a></li>
-                            <li><a href="">Yellow HTML5 Template</a></li>
-                            <li><a href="">Blackor Responsive Theme</a></li>
-                            <li><a href="">Portfolio Bootstrap Template</a></li>
-                            <li><a href="">Clean Slider Template</a></li>
+                        
+                        {% for post in posts %}
+                            <li><a href="{% url 'single' pk=post.pk %}">{{post.title}}</a></li>
+                        {% endfor %}
+                        
                         </ul>
+                        
                     </div>
 
                     <div class="col-md-4 footer-widget">
                     <!--This part will be changed !!! -->
                         <h3> <i class="fa fa-envelope"></i>Contact Me</h3>
 
-                        <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil fugiat, cupiditate veritatis excepturi tempore explicabo.</p>
+                        <p>If you have any question about pets or wanna share stories with me, you may contact me or have your say on my message board.</p>
+                        
                          <div class="footer-widget-icon">
                             <i class="fa fa-facebook"></i><i class="fa fa-twitter"></i><i class="fa fa-google"></i>
                         </div>

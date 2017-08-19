@@ -46,7 +46,7 @@ def index(request):
     return render(request, 'blog/index.html', {'posts':posts})
 
 def single(request,pk):
-    post = Post.objects.get(pk=pk)
+    post = get_object_or_404(Post,pk=pk)
     return render(request, 'blog/single.html', {'post':post})
     
 def contact(request):
